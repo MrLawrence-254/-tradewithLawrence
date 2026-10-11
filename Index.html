@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trade With Lawrence | Forex Services</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --gold: #c9a227;
+      --gold-light: #f0c84a;
+      --dark: #0a0e1a;
+      --dark-card: #111827;
+      --dark-border: #1e2a3a;
+      --text-primary: #f0f4ff;
+      --text-muted: #8a99b3;
+      --green: #22c55e;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--dark);
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 6%;
+      background: rgba(10, 14, 26, 0.95);
+      border-bottom: 1px solid var(--dark-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.5px;
+    }
+
+    .logo span {
+      color: var(--text-primary);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    nav ul li a:hover {
+      color: var(--gold);
+    }
+
+    .nav-cta {
+      background: var(--gold);
+      color: #000 !important;
+      padding: 0.5rem 1.2rem;
+      border-radius: 6px;
+      font-weight: 600 !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--gold-light) !important;
+      color: #000 !important;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      text-align: center;
+      padding: 6rem 6% 5rem;
+      background: linear-gradient(180deg, #0d1424 0%, var(--dark) 100%);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(201, 162, 39, 0.12);
+      color: var(--gold);
+      border: 1px solid rgba(201, 162, 39, 0.3);
+      padding: 0.3rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 580px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #000;
+      padding: 0.85rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: background 0.2s, transform 0.1s;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--dark-border);
+      color: var(--text-primary);
+      padding: 0.85rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: border-color 0.2s, transform 0.1s;
+      display: inline-block;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-1px);
+    }
+
+    /* ── STATS ── */
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      padding: 3rem 6%;
+      border-top: 1px solid var(--dark-border);
+      border-bottom: 1px solid var(--dark-border);
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-item .number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--gold);
+    }
+
+    .stat-item .label {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 5rem 6%;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-tag {
+      display: inline-block;
+      background: rgba(201, 162, 39, 0.1);
+      color: var(--gold);
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 0.3rem 0.9rem;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+    }
+
+    .section-header h2 {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      max-width: 540px;
+      margin: 0.8rem auto 0;
+    }
+
+    /* ── SERVICES CARDS ── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .service-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+    }
+
+    .card-icon {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+      color: var(--text-primary);
+    }
+
+    .service-card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .card-price {
+      margin-top: 1.2rem;
+      font-size: 0.85rem;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    /* ── WHY ME ── */
+    .why-section {
+      background: var(--dark-card);
+      border-top: 1px solid var(--dark-border);
+      border-bottom: 1px solid var(--dark-border);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .why-text h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .why-text h2 span {
+      color: var(--gold);
+    }
+
+    .why-text p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .why-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .why-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .why-list li .check {
+      color: var(--green);
+      font-size: 1rem;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .why-list li strong {
+      color: var(--text-primary);
+    }
+
+    .profile-card {
+      background: var(--dark);
+      border: 1px solid var(--dark-border);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+
+    .profile-avatar {
+      width: 90px;
+      height: 90px;
+      background: rgba(201, 162, 39, 0.15);
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      margin: 0 auto 1rem;
+    }
+
+    .profile-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .profile-card .title {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+    }
+
+    .profile-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .testimonial-card {
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .stars {
+      color: var(--gold);
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .testimonial-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-author {
+      font-size: 0.85rem;
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    /* ── CTA SECTION ── */
+    .cta-section {
+      text-align: center;
+      background: linear-gradient(135deg, #0d1424 0%, #111827 100%);
+      border-top: 1px solid var(--dark-border);
+    }
+
+    .cta-section h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .cta-section h2 span {
+      color: var(--gold);
+    }
+
+    .cta-section p {
+      color: var(--text-muted);
+      max-width: 500px;
+      margin: 0 auto 2rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2rem 6%;
+      border-top: 1px solid var(--dark-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    footer .logo {
+      font-size: 1.1rem;
+    }
+
+    footer p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav ul { display: none; }
+      .hero h1 { font-size: 2.2rem; }
+      .why-grid { grid-template-columns: 1fr; }
+      .stats { gap: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">Trade<span>With</span>Lawrence</div>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact" class="nav-cta">Get Started</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">🇰🇪 Professional Forex Trader — Nairobi, Kenya</div>
+    <h1>Master the Markets<br>with <span>Lawrence</span></h1>
+    <p>Learn forex trading the right way — with expert coaching, proven strategies, and hands-on mentorship designed for serious traders.</p>
+    <div class="hero-buttons">
+      <a href="#services" class="btn-primary">Explore Services</a>
+      <a href="#contact" class="btn-outline">Book a Free Call</a>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat-item">
+      <div class="number">500+</div>
+      <div class="label">Students Trained</div>
+    </div>
+    <div class="stat-item">
+      <div class="number">7+</div>
+      <div class="label">Years Experience</div>
+    </div>
+    <div class="stat-item">
+      <div class="number">95%</div>
+      <div class="label">Student Satisfaction</div>
+    </div>
+    <div class="stat-item">
+      <div class="number">10+</div>
+      <div class="label">Currency Pairs</div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="section-header">
+      <span class="section-tag">What I Offer</span>
+      <h2>Forex Services Tailored for You</h2>
+      <p>From beginner foundations to advanced strategies — I have a program that fits your level and goals.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="card-icon">📚</div>
+        <h3>Forex Foundation Course</h3>
+        <p>A step-by-step beginner program covering charts, candlesticks, support & resistance, risk management, and your first live trade.</p>
+        <div class="card-price">✦ Beginner Friendly</div>
+      </div>
+
+      <div class="service-card">
+        <div class="card-icon">🎯</div>
+        <h3>1-on-1 Coaching</h3>
+        <p>Personalized sessions where we analyse your charts, fix your trading mistakes, and build a custom strategy that works for your schedule and capital.</p>
+        <div class="card-price">✦ Most Popular</div>
+      </div>
+
+      <div class="service-card">
+        <div class="card-icon">📊</div>
+        <h3>Technical Analysis Masterclass</h3>
+        <p>Deep-dive into price action, Smart Money Concepts (SMC), order blocks, liquidity zones, and trend identification across multiple timeframes.</p>
+        <div class="card-price">✦ Intermediate – Advanced</div>
+      </div>
+
+      <div class="service-card">
+        <div class="card-icon">🧠</div>
+        <h3>Trading Psychology Mentorship</h3>
+        <p>Overcome fear, greed, and revenge trading. Learn the mental discipline that separates consistently profitable traders from the rest.</p>
+        <div class="card-price">✦ All Levels</div>
+      </div>
+
+      <div class="service-card">
+        <div class="card-icon">📡</div>
+        <h3>Live Trade Signals</h3>
+        <p>Get real-time buy/sell signals with clear entry, stop-loss, and take-profit levels — delivered daily via WhatsApp or Telegram.</p>
+        <div class="card-price">✦ Monthly Subscription</div>
+      </div>
+
+      <div class="service-card">
+        <div class="card-icon">👥</div>
+        <h3>Group Mentorship Program</h3>
+        <p>Join a small cohort of motivated traders for weekly live sessions, chart reviews, Q&A, and a private community to grow together.</p>
+        <div class="card-price">✦ Community Access Included</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHY ME -->
+  <section class="why-section" id="about">
+    <div class="why-grid">
+      <div class="why-text">
+        <span class="section-tag">Why Lawrence</span>
+        <h2>A Trader Who <span>Actually Trades</span></h2>
+        <p>I'm not just a teacher — I'm an active forex trader with over 7 years in the markets. Everything I teach is what I use on my own live accounts, every single day.</p>
+        <ul class="why-list">
+          <li><span class="check">✓</span><div><strong>Proven track record</strong> — consistent results across various market conditions</div></li>
+          <li><span class="check">✓</span><div><strong>Real-time mentorship</strong> — I'm available when the markets are open</div></li>
+          <li><span class="check">✓</span><div><strong>Simplified education</strong> — complex concepts broken down into clear, actionable steps</div></li>
+          <li><span class="check">✓</span><div><strong>African market focus</strong> — strategies suited for traders in Kenya and across Africa</div></li>
+          <li><span class="check">✓</span><div><strong>Risk-first approach</strong> — protecting your capital is always the first priority</div></li>
+        </ul>
+      </div>
+      <div class="profile-card">
+        <div class="profile-avatar">👤</div>
+        <h3>Lawrence</h3>
+        <div class="title">Professional Forex Trader & Mentor</div>
+        <p>"My mission is simple — to give every student the exact tools, strategies, and mindset they need to become a consistently profitable trader. No fluff, just results."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="section-header">
+      <span class="section-tag">Testimonials</span>
+      <h2>What Students Are Saying</h2>
+      <p>Hundreds of traders have transformed their results through the Trade With Lawrence programs.</p>
+    </div>
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"Before Lawrence, I was blowing accounts. After just 2 months of his coaching, I'm consistently profitable. Best investment I've made."</p>
+        <div class="testimonial-author">— Brian M., Nairobi</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"The 1-on-1 sessions are gold. Lawrence identifies your exact weaknesses and fixes them fast. I finally understand Smart Money Concepts."</p>
+        <div class="testimonial-author">— Grace W., Mombasa</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"His signals are accurate and always come with explanations so you learn while you earn. Highly recommended for anyone starting out."</p>
+        <div class="testimonial-author">— Daniel O., Kampala</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="contact">
+    <span class="section-tag">Get Started Today</span>
+    <h2>Ready to <span>Trade Smarter?</span></h2>
+    <p>Book a free 20-minute discovery call and let's find the right program to take your trading to the next level.</p>
+    <a href="mailto:tradewithLawrence@gmail.com" class="btn-primary">📩 Book a Free Call</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="logo">Trade<span>With</span>Lawrence</div>
+    <p>© 2025 Trade With Lawrence. All rights reserved.</p>
+    <p style="color: var(--text-muted); font-size: 0.8rem;">Trading involves risk. Past performance does not guarantee future results.</p>
+  </footer>
+
+</body>
+</html>
